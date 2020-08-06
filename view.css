@@ -1,0 +1,123 @@
+.widget_teacher .widgettitle {
+  display:none;
+}
+
+.clsTeacher { position:relative; margin-bottom:10px;}
+
+.clsTeacherTitle { }
+
+.clsCPTImage {
+  float:left;
+  width:112px; height:168px;
+  margin: 0px 22px 0px 0px;
+  text-align: center;
+	background-color: #fff;
+}
+
+.clsCPTImage .imgframe {
+  margin: 0 auto;
+  width:112px; height:168px;
+  overflow:hidden;
+}
+.clsCPTImage img {
+  margin: 0 auto;
+  height: 168px;
+  width:auto;
+  border:none;
+}
+    
+.imgframe .clsCPTImg {
+  border-radius: 100%;
+}
+
+.clsCPTTeacher {
+  float:left;
+  position:relative;
+}
+
+.clsCPTTitle {
+  float:left;
+  font-weight:bold;
+}
+.clsCPTContent {
+  float:left;
+  width:320px;
+  margin: 0px;
+  font-size:12px;
+  font-style:italic;
+}
+.clsCPTLink a {
+  color:#83479C;
+  text-decoration:underline;
+}
+.clsCPTMore {
+  position:absolute;
+  bottom:0px;
+  right:0px;
+}
+.clsCPTMore a{}
+
+.entry-content .clsCPTMore,
+.entry-content .clsCPTContent .clsCPTLink {display:none;}
+
+.entry-content .clsCPTTeacher,
+.entry-content .clsCPTContent {}
+
+
+body.home .clsTeacher { margin-left:-5px;}
+
+body.home .clsCPTImage {
+  float:left;
+  width:150px;
+  margin: 0px;
+  text-align: left;
+	border: none;
+  padding:0px;
+
+  position:absolute;
+  bottom:0px;
+}
+
+body.home .clsCPTImage img {
+  margin: 0px;
+  height: auto;
+  width: 150px;
+  border:none;
+}
+
+body.home .clsCPTTeacher {
+  float:left;
+  width:145px;
+
+  left:155px;
+  bottom:0px;
+}
+
+body.home .clsCPTTitle{
+  float:left;
+  width:100px;
+  font-size:14px;
+}
+
+body.home .clsCPTContent {
+  float:left;
+  width:100%;
+  margin: 10px 0;
+  font-size:14px;
+  font-style:italic;
+}
+body.home .clsCPTLink a {
+  color:#555555;
+  text-decoration:none;
+}
+body.home .clsCPTMore {
+  float:left;
+  height:30px;
+  width:190px;
+  position:relative;
+}
+body.home .clsCPTMore a{}
+
+body.home .clsCPTContent .clsCPTLink {display:none;}
+
+
