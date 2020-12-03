@@ -170,6 +170,7 @@ class CPTTeacherPlugin
   }
 
   public function prepareContent($showType,$showText) {
+	$SESH = array();
     $aTeachers = $this->getTeachers(0);
     $aCount=count($aTeachers);
 	
@@ -177,22 +178,22 @@ class CPTTeacherPlugin
     if ($aTeachers){
       $tID=0;
       $teachers=array();
-      session_start();
+//      session_start();
       if ($showType=='random'){
-        $_SESSION['CPTTeachers']['show']='random';
-        $tID=$_SESSION['CPTTeachers']['tID'];
+        $SESH['CPTTeachers']['show']='random';
+        $tID=$SESH['CPTTeachers']['tID'];
         do {
           srand();
           $id=rand(1,$aCount);
         } while ($id==$tID);
         $tID=$id;
-        $_SESSION['CPTTeachers']['tID']=$tID;
+        $SESH['CPTTeachers']['tID']=$tID;
         $aTeacher = $aTeachers[$tID-1];
         $teacher=$this->getHTML( $aTeacher, $showText );
         $teachers[]=$teacher;
       } elseif($showType=='all') {
         $tID=-1;
-        $_SESSION['CPTTeachers']['show']='all';
+        $SESH['CPTTeachers']['show']='all';
         foreach( $aTeachers as $aTeacher ){
           $teacher=$this->getHTML( $aTeacher, $showText );
           if ($teacher){
