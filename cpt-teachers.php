@@ -254,7 +254,7 @@ class CPTTeacherPlugin
     }
 
     $showText='content';
-    if( preg_match( '/excerpt/', $aMatches[1], $aSubMatch ) ){
+    if( !empty($aMatches[1]) && preg_match( '/excerpt/', $aMatches[1], $aSubMatch ) ){
       $showText='excerpt';
     }
 
