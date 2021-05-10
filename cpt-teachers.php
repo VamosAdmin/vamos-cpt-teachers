@@ -232,30 +232,22 @@ class CPTTeacherPlugin
   public function checkShortcodes( $aMatches ){
 	//echo 'checkShortCodes=>';print_r($aMatches); 
   
-    if( !isset( $aMatches[0] ) ) return '';
+    if( empty($aMatches[0]) ) return '';
 	
     if( $aMatches[0]=='#_ATT{Teacher}' ) {
 		return '[Teacher "'.$aMatches[0].'" '.$aMatches[1].']';
 	}
 
-    $aOptions = array();
-    $strReturn = '';
-    $aSubMatch = array();
-
-    $showType='?';
-    if( preg_match( '/random/', $aMatches[0], $aSubMatch ) ){
-      $showType='random';
-    }
-    if( preg_match( '/all/', $aMatches[0], $aSubMatch ) ){
-      $showType='all';
-    }
-    if ( ($showType!='random') && ($showType!='all')){
-      $showType=trim(str_replace('"','',$aMatches[0]));
-    }
+    $type = strtolower(trim($aMatches[0]));
+    $showType=trim(str_replace('"','',$type));
 
     $showText='content';
-    if( !empty($aMatches[1]) && preg_match( '/excerpt/', $aMatches[1], $aSubMatch ) ){
-      $showText='excerpt';
+    if( !empty($aMatches[1]) ){
+		$type = strtolower(trim($aMatches[1]));
+		$showText=trim(str_replace('"','',$type));
+		if ($showText != 'content'){
+			$showText='excerpt';
+		}
     }
 
     $content = $this->prepareContent($showType,$showText);
